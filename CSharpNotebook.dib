@@ -1,0 +1,30 @@
+#!markdown
+
+# Other languages
+
+This is a .NET interactive notebook
+
+#!csharp
+
+System.Console.WriteLine("It will evaluate C# code directly inline.")
+
+#!csharp
+
+// Do some using statments
+using System.Net.Http;
+using System.IO;
+
+#!csharp
+
+string html = string.Empty;
+string url = @"https://api.github.com/zen";
+
+var client = new HttpClient();
+
+HttpResponseMessage response = await client.GetAsync("http://www.contoso.com/");
+     response.EnsureSuccessStatusCode();
+     string responseBody = await response.Content.ReadAsStringAsync();
+     // Above three lines can be replaced with new helper method below
+     // string responseBody = await client.GetStringAsync(uri);
+
+     Console.WriteLine(responseBody);
